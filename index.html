@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio · Security Data Analyst</title>
+<meta name="description" content="Information Assurance student focused on AI-driven threat intelligence. Projects, certifications and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f8;--panel:#fff;--ink:#1c2230;--muted:#5b6578;--line:#d5dae3;--accent:#2b5f8a;--hl:#fde9a9;--hl2:#cfe6d6;--ph:#b3261e}
+@media (prefers-color-scheme:dark){:root{--bg:#12161d;--panel:#1a202a;--ink:#e6e9ef;--muted:#9aa3b5;--line:#2a3140;--accent:#8dbbe6;--hl:#5a4a14;--hl2:#1f4a33;--ph:#ff8a80}}
+:root{color-scheme:light dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+header strong{font-weight:600}
+nav{display:flex;gap:20px;align-items:center;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+#lang{font:inherit;font-size:14px;background:none;border:1px solid var(--line);color:var(--ink);padding:3px 12px;border-radius:999px;cursor:pointer}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;padding:64px 0 56px;align-items:center}
+h1{font:600 clamp(32px,5vw,48px)/1.12 "IBM Plex Serif",Georgia,serif;margin:0 0 20px;letter-spacing:-.01em}
+.role{color:var(--muted);margin:0 0 18px;font-weight:500}
+.hero p{max-width:60ch;margin:0 0 14px}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px}
+.links a{font-weight:500}
+.report{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:22px}
+.report p{margin:0;font-size:15.5px;line-height:1.9}
+.report mark{background:var(--hl);color:inherit;padding:2px 4px;border-radius:3px}
+.report mark+b,.report mark.b+b{font-size:12px}
+.report mark.b{background:var(--hl2)}
+.tag{display:inline-block;font:600 12px/1 "IBM Plex Sans",sans-serif;background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:3px 6px;margin-left:4px;vertical-align:1px;color:var(--ink)}
+.cap{margin-top:14px;font-size:13px;color:var(--muted)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font:600 24px/1.2 "IBM Plex Serif",Georgia,serif;margin:0 0 26px}
+.proj{display:grid;grid-template-columns:170px 1fr;gap:8px 32px;padding:22px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.meta{color:var(--muted);font-size:14px}
+.meta b{display:block;color:var(--ink);font-weight:500}
+.proj h3{margin:0 0 6px;font-size:18px;font-weight:600}
+.proj p{margin:0 0 8px;max-width:68ch}
+.stack{color:var(--muted);font-size:14px}
+.part{background:var(--panel);border-left:3px solid var(--accent);padding:8px 12px;margin:10px 0 0;max-width:68ch;font-size:15px}
+.certs{columns:2;column-gap:40px;padding:0;margin:0;list-style:none}
+.certs li{break-inside:avoid;margin:0 0 14px;font-size:15px}
+.certs span{display:block;color:var(--muted);font-size:13.5px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.cols p{margin:0 0 10px;max-width:60ch}
+.ph{color:var(--ph)}
+footer{padding:28px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media (max-width:760px){.hero,.cols{grid-template-columns:1fr;gap:28px}.proj{grid-template-columns:1fr}.certs{columns:1}nav a.hide{display:none}.hero{padding-top:40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <strong id="nm"></strong>
+  <nav>
+    <a class="hide" href="#projects" data-k="nav_p"></a>
+    <a class="hide" href="#certs" data-k="nav_c"></a>
+    <a href="#contact" data-k="nav_t"></a>
+    <button id="lang" type="button" aria-label="Language">VI / EN</button>
+  </nav>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1 data-k="h1"></h1>
+    <p class="role" data-k="role"></p>
+    <p data-k="about"></p>
+    <p data-k="edu"></p>
+    <div class="links" id="hl"></div>
+  </div>
+  <aside class="report" aria-label="Example">
+    <p>The actor sent a <mark>spear-phishing email with a malicious attachment</mark><span class="tag">T1566.001</span>, then <mark class="b">ran PowerShell</mark><span class="tag">T1059.001</span> to fetch a second-stage payload.</p>
+    <p class="cap" data-k="cap"></p>
+  </aside>
+</div>
+
+<section id="projects">
+  <h2 data-k="nav_p"></h2>
+  <div id="plist"></div>
+</section>
+
+<section id="certs">
+  <h2 data-k="nav_c"></h2>
+  <ul class="certs" id="clist"></ul>
+</section>
+
+<section id="contact">
+  <h2 data-k="nav_t"></h2>
+  <div class="cols">
+    <div><p data-k="cta"></p></div>
+    <div id="ct"></div>
+  </div>
+</section>
+</main>
+<footer>© <span id="yr"></span> <span id="nm2"></span></footer>
+</div>
+
+<script>
+/* ============ EDIT HERE: everything you need to personalise ============ */
+var ME = {
+  name: "[YOUR FULL NAME]",
+  email: "[your.email@example.com]",
+  linkedin: "https://www.linkedin.com/in/hyouga-sei",
+  github: "[https://github.com/your-id]"   // replace with your own GitHub URL
+};
+/* ======================================================================== */
+
+var T = {
+ en:{nav_p:"Projects",nav_c:"Certifications",nav_t:"Contact",
+  h1:"I turn security data into decisions.",
+  role:"Information Assurance student · FPT University · aiming for AI-driven threat intelligence",
+  about:"I am a third-year student who enjoys analyzing network traffic, classifying threat reports and deploying small systems end to end. I am looking for a Security Data Analyst internship where I can contribute to log analysis, alert triage and detection automation.",
+  edu:"Foundation in Python, SQL and digital forensics, with recent coursework in web programming, reverse engineering and digital forensics.",
+  cap:"Illustration of the task the CTI project works on. It is an example, not model output.",
+  cta:"Open to internship opportunities. The fastest way to reach me is email or LinkedIn.",
+  part:"My part",repo:"Repository",email:"Email",team:"Team project",
+  p:[
+   {y:"2026 – 2027",r:"Team member",t:"AI Classification & Mapping of CTI into MITRE ATT&CK Techniques",u:"https://github.com/truonggg123/AI-Classification-And-Mapping-CTI-into-MITRE-ATT-CK-Techniques",
+    d:"Research project that maps unstructured threat intelligence text to MITRE ATT&CK techniques with Transformer models and STIX 2.1 alias-based data augmentation (CyberEDA).",
+    m:"Trained and fine-tuned classification models on the CTI datasets (12,865 samples, 188 techniques).",s:"Python · PyTorch · Transformers · STIX 2.1"},
+   {y:"Spring 2026",r:"Team member",t:"SpeakMaster AI: pronunciation trainer and dictionary",u:"https://github.com/truonggg123/ai-pronunciation-trainer",
+    d:"Data Structures & Algorithms course project. Whisper speech recognition, Levenshtein alignment (dynamic programming), Trie autocomplete over 10,000+ words and an English-Vietnamese dictionary.",
+    m:"Built the SQL Server database and the speech module.",s:"Python · SQL Server · Whisper · Gradio"},
+   {y:"2025 – 2026",r:"Team member",t:"AI-Driven Linux Disk Cleanup Assistant",u:"https://github.com/truonggg123/AI-Driven-Linux-Disk-Cleanup-Assistant",
+    d:"Recommends Delete, Compress or Keep for each file from filename semantics, size and age, using a Decision Tree. Safety guards include a system-path blacklist and trash-based deletion.",
+    m:"Built the desktop GUI (Tkinter) used to review and run the recommended actions.",s:"Python · scikit-learn · spaCy · Tkinter"},
+   {y:"2026",r:"Team member",t:"Team Task Board",u:"https://github.com/igtanova06/Team-Task-Board",
+    d:"Kanban web app for small teams with role-based access (Owner, Member, Viewer), Flask-Login / JWT authentication and AJAX task updates.",
+    m:"[describe your part]",s:"Python · Flask · SQLAlchemy · Bootstrap"}
+  ]},
+ vi:{nav_p:"Dự án",nav_c:"Chứng chỉ",nav_t:"Liên hệ",
+  h1:"Biến dữ liệu an ninh thành quyết định.",
+  role:"Sinh viên An toàn thông tin · Đại học FPT · định hướng threat intelligence ứng dụng AI",
+  about:"Tôi là sinh viên năm 3, thích phân tích lưu lượng mạng, phân loại báo cáo mối đe dọa và triển khai các hệ thống nhỏ từ đầu đến cuối. Tôi tìm vị trí thực tập Security Data Analyst để đóng góp vào phân tích log, phân loại cảnh báo và tự động hóa phát hiện.",
+  edu:"Có nền tảng Python, SQL và phân tích điều tra số, với các học phần gần đây về lập trình web, reverse engineering và digital forensics.",
+  cap:"Minh họa bài toán mà dự án CTI giải quyết. Đây là ví dụ, không phải kết quả của mô hình.",
+  cta:"Tôi đang tìm cơ hội thực tập. Cách nhanh nhất để liên hệ là email hoặc LinkedIn.",
+  part:"Phần việc của tôi",repo:"Mã nguồn",email:"Email",team:"Dự án nhóm",
+  p:[
+   {y:"2026 – 2027",r:"Thành viên",t:"AI Classification & Mapping of CTI into MITRE ATT&CK Techniques",u:"https://github.com/truonggg123/AI-Classification-And-Mapping-CTI-into-MITRE-ATT-CK-Techniques",
+    d:"Đề tài nghiên cứu ánh xạ văn bản threat intelligence sang kỹ thuật MITRE ATT&CK bằng mô hình Transformer và phương pháp tăng cường dữ liệu dựa trên alias STIX 2.1 (CyberEDA).",
+    m:"Huấn luyện và tinh chỉnh các mô hình phân loại trên bộ dữ liệu CTI (12.865 mẫu, 188 kỹ thuật).",s:"Python · PyTorch · Transformers · STIX 2.1"},
+   {y:"Spring 2026",r:"Thành viên",t:"SpeakMaster AI: luyện phát âm và từ điển",u:"https://github.com/truonggg123/ai-pronunciation-trainer",
+    d:"Dự án môn Cấu trúc dữ liệu & Giải thuật. Nhận dạng giọng nói Whisper, căn chỉnh Levenshtein (quy hoạch động), gợi ý bằng Trie trên 10.000+ từ và từ điển Anh-Việt.",
+    m:"Xây dựng cơ sở dữ liệu SQL Server và speech module.",s:"Python · SQL Server · Whisper · Gradio"},
+   {y:"2025 – 2026",r:"Thành viên",t:"AI-Driven Linux Disk Cleanup Assistant",u:"https://github.com/truonggg123/AI-Driven-Linux-Disk-Cleanup-Assistant",
+    d:"Gợi ý Xóa, Nén hoặc Giữ cho từng tệp dựa trên ngữ nghĩa tên tệp, dung lượng và tuổi tệp, dùng Decision Tree. Có cơ chế an toàn như danh sách đen thư mục hệ thống và xóa qua thùng rác.",
+    m:"Xây dựng giao diện desktop (Tkinter) để rà soát và thực thi các hành động được gợi ý.",s:"Python · scikit-learn · spaCy · Tkinter"},
+   {y:"2026",r:"Thành viên",t:"Team Task Board",u:"https://github.com/igtanova06/Team-Task-Board",
+    d:"Ứng dụng web Kanban cho nhóm nhỏ với phân quyền (Owner, Member, Viewer), xác thực Flask-Login / JWT và cập nhật tác vụ bằng AJAX.",
+    m:"[mô tả phần việc của bạn]",s:"Python · Flask · SQLAlchemy · Bootstrap"}
+  ]}
+};
+var CERTS = [
+ ["Cybersecurity Attack and Defense Fundamentals Specialization","EC-Council · Coursera · 2026"],
+ ["Cryptography and Information Theory","University of Colorado System · Coursera · 2026"],
+ ["Asymmetric Cryptography and Key Management","University of Colorado System · Coursera · 2026"],
+ ["Certified Ethical Emerging Technologist Professional Certificate","CertNexus · Coursera · 2026"],
+ ["Critical Infrastructure Protection Certificate","OPSWAT Academy · 2026"],
+ ["Using Python to Access Web Data","Coursera · 2026"],
+ ["Data Analysis and Visualization with Python","Arizona State University · 2026"],
+ ["Object-Oriented Programming and GUI with Python","Arizona State University · 2026"],
+ ["Academic Skills for University Success Specialization","The University of Sydney · 2026"],
+ ["Concurrent and Parallel Programming in Python","Packt · 2026"],
+ ["CCNA: Switching, Routing, and Wireless Essentials","Cisco · 2026"],
+ ["AI For Everyone","DeepLearning.AI · 2025"]
+];
+
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function isPh(s){return /^\[.*\]$/.test(s)}
+function val(s){return isPh(s)?'<span class="ph">'+esc(s)+'</span>':esc(s)}
+function lnk(u,label){return isPh(u)?'<span class="ph">'+esc(label)+'</span>':'<a href="'+esc(u)+'" rel="noopener">'+esc(label)+'</a>'}
+
+function render(l){
+  var t=T[l];
+  document.documentElement.lang=l;
+  document.querySelectorAll("[data-k]").forEach(function(e){e.textContent=t[e.getAttribute("data-k")]});
+  document.getElementById("nm").innerHTML=val(ME.name);
+  document.getElementById("nm2").innerHTML=val(ME.name);
+  document.getElementById("hl").innerHTML=lnk(ME.linkedin,"LinkedIn")+lnk(ME.github,"GitHub")+
+    (isPh(ME.email)?'<span class="ph">Email</span>':'<a href="mailto:'+esc(ME.email)+'">Email</a>');
+  document.getElementById("ct").innerHTML=
+    "<p><b>LinkedIn</b><br>"+lnk(ME.linkedin,"linkedin.com/in/hyouga-sei")+"</p>"+
+    "<p><b>GitHub</b><br>"+lnk(ME.github,ME.github.replace("https://",""))+"</p>"+
+    "<p><b>Email</b><br>"+(isPh(ME.email)?val(ME.email):'<a href="mailto:'+esc(ME.email)+'">'+esc(ME.email)+"</a>")+"</p>";
+  document.getElementById("plist").innerHTML=t.p.map(function(p){
+    return '<article class="proj"><div class="meta"><b>'+esc(p.y)+"</b>"+esc(p.r)+"</div><div>"+
+      "<h3>"+esc(p.t)+"</h3><p>"+esc(p.d)+"</p>"+
+      '<p class="stack">'+esc(p.s)+" · "+lnk(p.u,t.repo)+"</p>"+
+      '<p class="part"><b>'+esc(t.part)+":</b> "+val(p.m)+"</p></div></article>";
+  }).join("");
+  document.getElementById("clist").innerHTML=CERTS.map(function(c){
+    return "<li>"+esc(c[0])+"<span>"+esc(c[1])+"</span></li>"}).join("");
+  document.title=(isPh(ME.name)?"Portfolio":ME.name)+" · Security Data Analyst";
+}
+var lang=(navigator.language||"en").slice(0,2)==="vi"?"vi":"en";
+try{var s=localStorage.getItem("lang");if(s==="vi"||s==="en")lang=s}catch(e){}
+document.getElementById("yr").textContent=new Date().getFullYear();
+document.getElementById("lang").addEventListener("click",function(){
+  lang=lang==="vi"?"en":"vi";try{localStorage.setItem("lang",lang)}catch(e){}render(lang)});
+render(lang);
+</script>
+</body>
+</html>
