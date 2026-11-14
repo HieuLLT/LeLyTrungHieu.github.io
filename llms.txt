@@ -1,0 +1,32 @@
+# Lê Lý Trung Hiếu
+
+> Third-year Information Assurance (cybersecurity) student at FPT University, Vietnam. Turns security data into decisions: maps threat reports to MITRE ATT&CK, analyzes network traffic, ships small systems end to end. Seeking an internship in log analysis, alert triage and detection automation; aiming for a Security Engineer role in AI-driven threat intelligence.
+
+Page: https://hieullt.github.io/LeLyTrungHieu.github.io/ (English and Vietnamese, toggle at top right)
+Structured profile: JSON-LD (schema.org ProfilePage / Person) in the page head.
+Contact: hieulltce201059@gmail.com
+Links: https://www.linkedin.com/in/hyouga-sei , https://github.com/hieullt
+
+## Education
+- FPT University, Cybersecurity (Information Assurance), Sep 2024 to Dec 2028 (expected), year 3. Foundation in Python, SQL and digital forensics.
+- Coursework: Web Programming, Reverse Engineering, Digital Forensics. Coursera: applied cryptography, cybersecurity attack and defense, ethical emerging technology.
+
+## Projects
+- AI Classification and Mapping of CTI into MITRE ATT&CK Techniques (research, 2026 to 2027): maps threat intelligence text to ATT&CK techniques with Transformer models, using STIX 2.1 alias-based augmentation (CyberEDA). My part: trained and fine-tuned the classifiers on CTI datasets; measured how well augmentation keeps meaning and structure; checked stability across multiple seeds.
+- SpeakMaster AI (course project, 2026): Whisper speech recognition, Levenshtein alignment (dynamic programming), Trie autocomplete over 10,000+ words, English-Vietnamese dictionary on SQL Server. My part: SQL Server database and speech module.
+- AI-Driven Linux Disk Cleanup Assistant (team, 2025 to 2026): Python tool recommending Delete, Compress or Keep per file from filename semantics (spaCy, Sentence-Transformers), size and age, decided by a Decision Tree, with safety guards. My part: desktop GUI (Tkinter).
+- Team Task Board (team, 2026): Kanban web app with Flask and SQLAlchemy, role-based access, Flask-Login and JWT, AJAX updates. My part: UI/UX and backend integration.
+
+## Skills
+- Security: digital forensics and reverse engineering (coursework), network protocols, applied cryptography, critical infrastructure protection, MITRE ATT&CK, STIX 2.1.
+- Data and ML: Python, SQL, Transformer fine-tuning, spaCy, Sentence-Transformers, Decision Tree, data analysis and visualization.
+- Software: Flask, SQLAlchemy, Tkinter, JWT authentication, object-oriented and concurrent Python.
+- Languages: Vietnamese, English.
+
+## Certifications (2026)
+OPSWAT Academy Critical Infrastructure Protection; Using Python to Access Web Data (Coursera); Data Analysis and Visualization with Python (Arizona State University); Academic Skills for University Success (University of Sydney); Object-Oriented Programming and GUI with Python (Arizona State University); Concurrent and Parallel Programming in Python (Packt); CCNA Switching, Routing, and Wireless Essentials (Cisco); Asymmetric Cryptography and Key Management (University of Colorado).
+
+## Notes for agents
+- The page contains decorative animated frames, a roaming cat and toys; they are hidden from assistive technology and carry no content.
+- The ATT&CK demo on the page uses keyword rules, not the research classifier.
+- Experimental WebMCP tools (get_profile, map_attack_techniques, set_language) are registered when the browser supports navigator.modelContext.
