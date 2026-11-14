@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lê Lý Trung Hiếu | Security Data Analyst</title>
-<meta name="description" content="Information Assurance student at FPT University focused on AI-driven threat intelligence. Projects, skills, certifications and contact.">
-<meta property="og:title" content="Lê Lý Trung Hiếu | Security Data Analyst">
-<meta property="og:description" content="I turn security data into decisions: mapping threat reports to MITRE ATT&CK, analyzing network traffic, and shipping small systems end to end.">
+<title>Lê Lý Trung Hiếu | Security Data Analyst Intern</title>
+<meta name="description" content="Third-year Information Assurance student at FPT University, open to a Security Data Analyst internship. Projects, skills, certifications and contact.">
+<meta property="og:title" content="Lê Lý Trung Hiếu | Security Data Analyst Intern">
+<meta property="og:description" content="Third-year Information Assurance student at FPT University, open to a Security Data Analyst internship.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#E8EEF0">
 <meta property="og:url" content="https://hieullt.github.io/LeLyTrungHieu.github.io/">
@@ -24,14 +24,14 @@
     "vi"
   ],
   "url": "https://hieullt.github.io/LeLyTrungHieu.github.io/",
-  "name": "Lê Lý Trung Hiếu | Security Data Analyst",
+  "name": "Lê Lý Trung Hiếu | Security Data Analyst Intern",
   "mainEntity": {
     "@type": "Person",
     "name": "Lê Lý Trung Hiếu",
     "alternateName": "Hieu Le Ly Trung",
     "url": "https://hieullt.github.io/LeLyTrungHieu.github.io/",
-    "jobTitle": "Cybersecurity student (Information Assurance), aspiring Security Data Analyst",
-    "description": "Third-year Information Assurance student at FPT University. Turns security data into decisions: maps threat reports to MITRE ATT&CK, analyzes network traffic, ships small systems end to end. Seeking an internship in log analysis, alert triage and detection automation.",
+    "jobTitle": "Information Assurance student, seeking a Security Data Analyst internship",
+    "description": "Third-year Information Assurance student at FPT University, open to a Security Data Analyst internship. Wants to work on log analysis, alert triage and automating repetitive detection work. Uses Python and SQL.",
     "email": "mailto:hieulltce201059@gmail.com",
     "alumniOf": {
       "@type": "CollegeOrUniversity",
@@ -80,6 +80,13 @@
         var h = document.documentElement;
         h.classList.add('pre');
         setTimeout(function () { h.classList.remove('pre'); }, 2500); /* safety net */
+      }
+      /* showreel mode: default on for roomy, motion-friendly screens; the saved choice wins */
+      var pref = null; try { pref = localStorage.getItem('reel'); } catch (e2) {}
+      var roomy = window.innerWidth >= 900 && window.innerHeight >= 560 && !/[?&]scroll\b/.test(location.search);
+      if (Element.prototype.animate && ((roomy && !calm && pref !== 'off') || pref === 'on')) {
+        document.documentElement.classList.add('reel');
+        setTimeout(function () { if (!window.__reelReady) document.documentElement.classList.remove('reel'); }, 4000); /* safety net */
       }
     } catch (e) {}
   })();
@@ -144,7 +151,7 @@
   .top nav a:hover { color: var(--ink); }
   .tool {
     font: inherit; font-size: .85rem; font-weight: 600; color: var(--ink);
-    background: transparent; border: 1px solid var(--line); border-radius: 999px;
+    background: transparent; border: 1.5px solid var(--line); border-radius: 3px;
     padding: 6px 12px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center;
   }
   .tool:hover { border-color: var(--ink); }
@@ -168,11 +175,15 @@
   .cta { display: flex; flex-wrap: wrap; gap: 12px; }
   .btn {
     font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
-    padding: 12px 20px; border-radius: 10px; border: 1.5px solid var(--ink);
+    padding: 11px 18px; border-radius: 2px; border: 2px solid var(--ink);
     background: var(--ink); color: var(--paper); display: inline-block;
+    font-family: var(--mono); font-size: .86rem; text-transform: uppercase; letter-spacing: .04em;
+    transition: background .1s linear, color .1s linear, transform .1s linear, box-shadow .1s linear;
   }
   .btn.ghost { background: transparent; color: var(--ink); }
-  .btn:hover { transform: translateY(-1px); }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 color-mix(in srgb, var(--ink) 32%, transparent); }
+  .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn:active { transform: translate(0, 0); box-shadow: none; }
 
   /* the report sheet (signature element) */
   .sheet {
@@ -317,13 +328,75 @@
   @keyframes float { from { transform: translateY(0) rotate(-4deg); } to { transform: translateY(-3px) rotate(4deg); } }
   @keyframes slide { to { transform: translateX(24px); } }
 
+  :root { --halo: 0 0 12px var(--bg), 0 0 3px var(--bg); }
+  h1, .lines p, .status, .sec h2.title, .sec .sub { text-shadow: var(--halo); }
+  .hero { position: relative; }
+  .lines { display: flex; flex-direction: column; gap: .95rem; max-width: 36rem; margin: 0 0 24px; }
+  .lines p { margin: 0; font-size: clamp(1.12rem, 2vw, 1.48rem); line-height: 1.3; letter-spacing: .01em; color: var(--ink); }
+  .lines p:last-child { color: color-mix(in srgb, var(--ink) 78%, var(--bg)); }
+  body { overflow-x: clip; }
+  /* role wheel: a drum of intern roles. The front role sits on three misaligned layers of its own text. */
+  .wheel { position: relative; --rowh: 2.3rem; height: calc(var(--rowh) * 2.95); margin: 0 0 16px; perspective: 720px; perspective-origin: 20% 0; }
+  .wheel ol { list-style: none; margin: 0; padding: 0; position: relative; height: 100%; }
+  .wr { position: absolute; left: 0; top: 0; width: min(100%, 30rem); height: var(--rowh); transform-origin: 0 50%; will-change: transform, opacity;
+    transform: translateY(var(--y, 0)) rotateX(var(--rx, 0deg)) scale(var(--s, 1)); opacity: var(--o, 1); filter: blur(var(--b, 0px)); }
+  .wt { display: block; position: relative; font-size: clamp(1.18rem, 2.1vw, 1.5rem); font-weight: 700; letter-spacing: -.012em; line-height: var(--rowh); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @supports (content: "a" / "") {
+    .wr::before, .wr::after, .wt::before { content: attr(data-n) / ""; position: absolute; left: -.5em; right: -.5em; top: -.75em; height: calc(100% + 1.5em); overflow: hidden; text-align: justify; text-align-last: justify; white-space: normal; line-height: 1.02; font-weight: 400; pointer-events: none; user-select: none; color: var(--ink);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+    .wr::before { font-size: .8rem; z-index: -1; opacity: calc(var(--f, 0) * .26); }
+    .wr::after { font-size: .92rem; letter-spacing: -.045em; translate: .55rem .28rem; z-index: -1; opacity: calc(var(--f, 0) * .16); }
+    .wt::before { font-size: .66rem; letter-spacing: .13em; translate: -.45rem -.3rem; z-index: -1; opacity: calc(var(--f, 0) * .16); }
+  }
+  .wheel-pause { position: absolute; right: 0; top: 0; padding: 3px 7px; font-size: .72rem; z-index: 2; }
+  .wheel-pause svg { width: 10px; height: 10px; display: block; }
+  .wheel-pause .ic-play, .wheel-pause[aria-pressed="true"] .ic-pause { display: none; }
+  .wheel-pause[aria-pressed="true"] .ic-play { display: block; }
+  .wheel.static { height: auto; perspective: none; }
+  .wheel.static .wr { position: relative; transform: none; opacity: 1; filter: none; margin: 0 0 .15rem; }
+  .wheel.static .wr::before, .wheel.static .wr::after, .wheel.static .wt::before { display: none; }
+  .wheel.static .wheel-pause { display: none; }
+  .wheel.static .wt { font-size: 1.05rem; font-weight: 600; opacity: .8; }
+  .wheel.static .wr:first-child .wt { opacity: 1; font-size: 1.3rem; font-weight: 700; }
+  /* showreel: every section is a full-screen scene on a looping depth camera */
+  #depth { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; display: none; opacity: 0; transition: opacity .7s ease; }
+  html.reel #depth { display: block; }
+  #depth.ready { opacity: 1; }
+  html.reel, html.reel body { height: 100%; overflow: hidden; }
+  html.reel main { position: fixed; left: 0; right: 0; top: var(--hdr, 58px); bottom: var(--dock, 64px); max-width: none; margin: 0; padding: 0; }
+  html.reel main > section { position: absolute; inset: 0; display: none; overflow-x: hidden; overflow-y: auto; margin: 0; scrollbar-width: thin;
+    padding: 52px max(24px, calc((100% - 1120px) / 2 + 24px)) 40px; background: color-mix(in srgb, var(--bg) 56%, transparent); }
+  html.reel main > section.on { display: block; }
+  html.reel main > .hero.on { display: grid; align-content: center; align-content: safe center; padding-top: 16px; }
+  html.reel footer, html.reel .progress { display: none; }
+  .dock { position: fixed; left: 0; right: 0; bottom: 0; height: var(--dock, 64px); z-index: 22; display: none; align-items: center; justify-content: center; gap: 8px; padding: 0 18px;
+    background: color-mix(in srgb, var(--bg) 84%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: 1px solid var(--line); }
+  html.reel .dock { display: flex; }
+  .dock[hidden] { display: none !important; }
+  .dk { min-width: 40px; display: inline-flex; align-items: center; justify-content: center; padding: 7px 10px; }
+  .dk svg { width: 12px; height: 12px; display: block; }
+  .dk .ic-play, .dk[aria-pressed="true"] .ic-pause { display: none; }
+  .dk[aria-pressed="true"] .ic-play { display: block; }
+  .dk.txt { font-size: .74rem; }
+  .dots { list-style: none; display: flex; gap: 2px; margin: 0 8px; padding: 0; }
+  .dot { position: relative; width: 30px; height: 30px; border: 0; background: transparent; cursor: pointer; padding: 0; }
+  .dot::before { content: ""; position: absolute; left: 5px; right: 5px; top: 13px; height: 4px; border-radius: 1px; background: var(--line); transition: background .15s, top .15s, height .15s; }
+  .dot:hover::before { background: var(--muted); }
+  .dot[aria-current]::before { background: var(--tag); top: 12px; height: 6px; }
+  .dot:focus-visible { outline: 2px solid var(--tag); outline-offset: 1px; }
+  @supports (content: "a" / "") { .dot::after { content: attr(data-label) / ""; position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--paper); font: 600 .7rem var(--mono); padding: 3px 7px; border-radius: 2px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .12s; }
+    .dot:hover::after, .dot:focus-visible::after { opacity: 1; } }
+  .cnt { font: 500 .8rem var(--mono); color: var(--muted); min-width: 3.6em; text-align: center; }
+  .dwell { position: absolute; left: 0; top: -1px; height: 3px; width: 100%; background: var(--tag); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+  html:not(.reel) .skip2 { display: none; }
+  @media (max-width: 720px) { .dots { display: none; } .top nav { display: none; } }
   /* accessibility layer and motion helpers */
   .sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
   .skip { position: fixed; left: 12px; top: 8px; z-index: 100; padding: 8px 14px; border-radius: 8px; background: var(--ink); color: var(--paper); font-weight: 600; text-decoration: none; transform: translateY(-160%); }
   .skip:focus { transform: none; outline: 3px solid var(--tag); outline-offset: 2px; }
   main:focus { outline: none; }
   .progress { position: fixed; left: 0; top: 0; right: 0; height: 3px; z-index: 60; background: var(--tag); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
-  html.pre .hero h1 span, html.pre .hero .role, html.pre .hero .lead, html.pre .hero .status, html.pre .hero .cta .btn, html.pre .hero .sheet { opacity: 0; }
+  html.pre .hero h1 span, html.pre .hero .wheel, html.pre .hero .lines p, html.pre .hero .status, html.pre .hero .cta .btn, html.pre .hero .sheet { opacity: 0; }
   /* the cat: sprite base, colour menu, toys */
   .cat { position: fixed; left: 0; top: 0; z-index: 15; width: 96px; pointer-events: none; touch-action: none; will-change: transform; -webkit-user-select: none; user-select: none; }
   .cat[hidden] { display: none; }
@@ -365,7 +438,7 @@
   .aside, .course { position: relative; }
   html.catoff .slot, html.reduce .slot { display: none; }
   html.catoff .catwrap .tool.arrow { display: none; }
-  html.catoff .catwrap #catBtn { border-radius: 999px; }
+  html.catoff .catwrap #catBtn { border-radius: 3px; }
   @media (max-width: 640px) { .catmenu { right: -40px; } }
 
 /* ===== cat sprite ===== */
@@ -630,8 +703,10 @@
 </head>
 <body>
 <a class="skip" href="#top" data-vi="Bỏ qua, tới nội dung chính">Skip to main content</a>
+<a class="skip skip2" id="skipReel" href="#top">Switch to normal scrolling</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <div class="sr" id="live" role="status" aria-live="polite" aria-atomic="true"></div>
+<canvas id="depth" aria-hidden="true" hidden></canvas>
 
 <header class="top">
   <div class="top-in">
@@ -645,6 +720,7 @@
       <a href="#certs" data-vi="Chứng chỉ">Certifications</a>
       <a href="#contact" data-vi="Liên hệ">Contact</a>
     </nav>
+    <button class="tool" id="reelBtn" type="button" aria-pressed="false">Reel</button>
     <button class="tool" id="lang" type="button" aria-label="VI / EN: switch language, đổi ngôn ngữ"><span data-l="vi">VI</span><span aria-hidden="true">/</span><span data-l="en">EN</span></button>
     <button class="tool" id="theme" type="button" aria-label="Dark mode" aria-pressed="false">
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -779,12 +855,25 @@
 
 <main id="top" class="wrap" tabindex="-1">
 
-  <section class="hero" aria-label="Introduction">
+  <section class="hero on" aria-label="Introduction">
     <div>
       <h1><span>Lê Lý</span><span>Trung Hiếu</span></h1>
-      <p class="role">Security Data Analyst</p>
-      <p class="lead" data-vi="Sinh viên ngành An toàn thông tin tại Đại học FPT. Tôi thích dùng dữ liệu an ninh mạng để rút ra quyết định: đối chiếu báo cáo mối đe dọa với MITRE ATT&amp;CK, phân tích lưu lượng mạng và tự tay xây những hệ thống nhỏ từ đầu đến cuối.">Information Assurance student at FPT University. I turn security data into decisions: mapping threat reports to MITRE ATT&amp;CK, analyzing network traffic, and shipping small systems end to end.</p>
-      <p class="status"><i aria-hidden="true"></i><span data-vi="Đang tìm vị trí thực tập về phân tích log, phân loại cảnh báo và tự động hóa phát hiện.">Looking for an internship in log analysis, alert triage and detection automation.</span></p>
+      <div class="wheel" id="wheel" role="group" aria-label="Roles I am looking for">
+        <ol aria-label="Intern roles">
+          <li class="wr"><span class="wt" data-vi="Thực tập sinh Security Data Analyst">Security Data Analyst Intern</span></li>
+          <li class="wr"><span class="wt" data-vi="Thực tập sinh Threat Intelligence Analyst">Threat Intelligence Analyst Intern</span></li>
+          <li class="wr"><span class="wt" data-vi="Thực tập sinh SOC Analyst">SOC Analyst Intern</span></li>
+          <li class="wr"><span class="wt" data-vi="Thực tập sinh Detection Engineer">Detection Engineer Intern</span></li>
+          <li class="wr"><span class="wt" data-vi="Thực tập sinh AI/ML về bảo mật">Security AI/ML Intern</span></li>
+        </ol>
+        <button class="tool wheel-pause" type="button" aria-pressed="false" data-pause aria-label="Pause the role rotation"><svg class="ic-pause" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/></svg><svg class="ic-play" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg></button>
+      </div>
+      <div class="lines">
+        <p data-vi="Tôi là sinh viên năm ba ngành An toàn thông tin tại Đại học FPT.">I'm a third-year Information Assurance student at FPT University.</p>
+        <p data-vi="Việc tôi muốn làm mỗi ngày: đọc log, phân loại cảnh báo và viết script cho những phần lặp đi lặp lại.">What I want to do all day: read logs, sort alerts, and script the repetitive parts.</p>
+        <p data-vi="Python và SQL là hai công cụ tôi dùng quen tay nhất.">Python and SQL are the tools I reach for first.</p>
+      </div>
+      <p class="status"><i aria-hidden="true"></i><span data-vi="Đang tìm vị trí thực tập Security Data Analyst.">Open to a Security Data Analyst internship.</span></p>
       <div class="cta">
         <a class="btn" href="#projects" data-vi="Xem dự án">See projects</a>
         <a class="btn ghost" href="#contact" data-vi="Liên hệ">Get in touch</a>
@@ -1123,6 +1212,16 @@
 
 </main>
 
+<nav class="dock" id="dock" aria-label="Showreel controls" hidden>
+  <i class="dwell" id="dwell" aria-hidden="true"></i>
+  <button class="tool dk" id="rPrev" type="button" aria-label="Previous scene"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M7 1 3 5l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="tool dk" type="button" data-pause aria-pressed="false" aria-label="Pause the showreel"><svg class="ic-pause" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/></svg><svg class="ic-play" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg></button>
+  <button class="tool dk" id="rNext" type="button" aria-label="Next scene"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="m3 1 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <ol class="dots" id="dots"></ol>
+  <span class="cnt" id="rCnt" aria-hidden="true">1 / 8</span>
+  <button class="tool dk txt" id="rExit" type="button" data-vi="Cuộn trang">Scroll</button>
+</nav>
+
 <footer>
   <div class="wrap foot"><p><span id="year"></span> Lê Lý Trung Hiếu. <span data-vi="Viết tay bằng HTML, CSS và một chút JavaScript.">Written by hand in HTML, CSS and a little JavaScript.</span></p><div class="sq duck" aria-hidden="true"><svg viewBox="0 0 72 72" aria-hidden="true" focusable="false"><rect width="72" height="72" fill="#0D1F2B"/><g class="duckb"><ellipse cx="34" cy="40" rx="17" ry="11" fill="#FFCD28"/><circle cx="48" cy="26" r="9.5" fill="#FFCD28"/><path d="M56 23 L67 27 L56 31 Z" fill="#F08A24"/><circle cx="51" cy="24" r="1.9" fill="#0D1F2B"/><path d="M24 38q8 8 18 0" fill="none" stroke="#E0A800" stroke-width="2.4" stroke-linecap="round"/></g><path class="wv" d="M-24 52 q6 -5 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 V80 H-24 Z" fill="#1E6A8C" fill-opacity=".92"/></svg></div></div>
 </footer>
@@ -1147,7 +1246,7 @@
   function A() { return window.anime && window.anime.animate ? window.anime : null; }
   function list(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
   function clear(els) { els.forEach(function (e) { e.style.removeProperty('opacity'); e.style.removeProperty('transform'); e.style.removeProperty('will-change'); }); }
-  var HERO = '.hero h1 span, .hero .role, .hero .lead, .hero .status, .hero .cta .btn, .hero .sheet';
+  var HERO = '.hero h1 span, .hero .wheel, .hero .lines p, .hero .status, .hero .cta .btn, .hero .sheet';
   var REVEAL = '.sec .head, .blk, .facts, .cw, .skills > div, .certs li, .mail, .links';
 
   window.motion = {
@@ -1160,8 +1259,8 @@
         var tl = a.createTimeline({ defaults: { ease: 'outExpo', duration: 900 }, onComplete: function () { clear(els); } });
         var pick = function (s) { return list(s); };
         tl.add(pick('.hero h1 span'), { opacity: [0, 1], translateY: [34, 0], delay: a.stagger(110) }, 0)
-          .add(pick('.hero .role'), { opacity: [0, 1], translateY: [18, 0] }, 260)
-          .add(pick('.hero .lead, .hero .status'), { opacity: [0, 1], translateY: [18, 0], delay: a.stagger(90) }, 360)
+          .add(pick('.hero .wheel'), { opacity: [0, 1], translateY: [18, 0] }, 260)
+          .add(pick('.hero .lines p, .hero .status'), { opacity: [0, 1], translateY: [18, 0], delay: a.stagger(110) }, 360)
           .add(pick('.hero .cta .btn'), { opacity: [0, 1], translateY: [14, 0], delay: a.stagger(70) }, 520)
           .add(pick('.hero .sheet'), { opacity: [0, 1], translateY: [28, 0], duration: 1000 }, 300);
         requestAnimationFrame(function () { requestAnimationFrame(function () { h.classList.remove('pre'); }); }); /* anime writes opacity:0 inline first */
@@ -1174,11 +1273,11 @@
     },
     reveal: function () {
       if (calm || !canWaapi || !('IntersectionObserver' in window)) return;
-      var seen = new WeakSet();
+      var seen = new WeakSet(), root = document.documentElement;
       var io = new IntersectionObserver(function (entries) {
         var n = 0;
         entries.forEach(function (en) {
-          if (!en.isIntersecting || seen.has(en.target)) return;
+          if (root.classList.contains('reel') || !en.isIntersecting || seen.has(en.target)) return;
           seen.add(en.target); io.unobserve(en.target);
           en.target.animate([{ opacity: 0, transform: 'translateY(22px)' }, { opacity: 1, transform: 'none' }], { duration: 650, delay: 70 * n++, easing: EASE, fill: 'backwards' });
         });
@@ -1201,8 +1300,504 @@
     },
     init: function () { this.hero(); this.reveal(); this.progress(); }
   };
+
+  /* ---------- global pause + role wheel ---------- */
+  var M = window.motion;
+  M.paused = false;
+  M.setPaused = function (v) {
+    M.paused = !!v;
+    list('[data-pause]').forEach(function (b) { b.setAttribute('aria-pressed', M.paused ? 'true' : 'false'); });
+    document.dispatchEvent(new CustomEvent('motionpause', { detail: M.paused }));
+  };
+  list('[data-pause]').forEach(function (b) { b.addEventListener('click', function () { M.setPaused(!M.paused); }); });
+
+  var wheelEl = document.getElementById('wheel');
+  window.wheel = (function () {
+    if (!wheelEl) return { noise: function () {} };
+    var items = Array.prototype.slice.call(wheelEl.querySelectorAll('.wr')), n = items.length;
+    var ROW = 2.3, HOLD = 1900, MOVE = 950, lo = -1.1, state = { t: 0 }, idx = 0, timer = 0, tween = null;
+    var visible = true, hover = false;
+    function wrap(p) { var span = n; return ((p - lo) % span + span) % span + lo; }
+    function lay(p) {
+      var y, s, o, b, rx;
+      if (p < 0) { y = p * 2.5; s = 1 + p * 0.22; o = Math.max(0, 1 + p * 1.55); b = -p * 2.2; rx = -p * 14; }
+      else { y = 5.9 * (1 - Math.exp(-p * 0.62)) / (1 - Math.exp(-0.62 * 3)); s = 1 / (1 + 0.2 * p); o = p <= 1 ? 1 - p * 0.14 : (p <= 2 ? 0.86 - (p - 1) * 0.2 : Math.max(0, 0.66 * (3 - p))); b = p * 0.9; rx = -p * 8; }
+      return { y: y, s: s, o: o, b: b, rx: rx, f: Math.max(0, 1 - Math.abs(p) * 1.25) };
+    }
+    function render(t) {
+      for (var k = 0; k < n; k++) {
+        var p = wrap(k - t), L = lay(p), el = items[k], st = el.style;
+        st.setProperty('--y', (L.y * ROW / 2.3).toFixed(3) + 'rem');
+        st.setProperty('--s', L.s.toFixed(3)); st.setProperty('--o', L.o.toFixed(3));
+        st.setProperty('--b', L.b.toFixed(2) + 'px'); st.setProperty('--rx', L.rx.toFixed(1) + 'deg');
+        st.setProperty('--f', L.f.toFixed(3)); st.zIndex = String(100 - Math.round(Math.abs(p) * 10));
+        el.setAttribute('aria-current', L.f > 0.5 ? 'true' : 'false');
+      }
+    }
+    function noise() {
+      items.forEach(function (el) {
+        var t = el.querySelector('.wt'), txt = (t.textContent || '').trim(), rep = '';
+        for (var i = 0; i < 12; i++) rep += txt + ' ';
+        el.setAttribute('data-n', rep); t.setAttribute('data-n', rep);
+      });
+    }
+    function canRun() { return !M.calm && !M.paused && !document.hidden && visible && !hover; }
+    function ease(x) { return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+    function step() {
+      timer = 0;
+      if (!canRun()) { schedule(400); return; }
+      var from = idx, to = idx + 1, a = window.anime;
+      if (a && a.animate) {
+        state.t = from;
+        tween = a.animate(state, { t: to, duration: MOVE, ease: 'inOutCubic', onUpdate: function () { render(state.t); }, onComplete: done });
+      } else {
+        var t0 = performance.now();
+        (function f(now) { var u = Math.min(1, (now - t0) / MOVE); state.t = from + (to - from) * ease(u); render(state.t); if (u < 1) tween = requestAnimationFrame(f); else done(); })(t0);
+      }
+      function done() { idx = to; if (idx >= n * 1000) idx = 0; state.t = idx; render(state.t); schedule(HOLD); }
+    }
+    function schedule(ms) { clearTimeout(timer); timer = setTimeout(step, ms); }
+    wheelEl.addEventListener('mouseenter', function () { hover = true; });
+    wheelEl.addEventListener('mouseleave', function () { hover = false; });
+    wheelEl.addEventListener('focusin', function () { hover = true; });
+    wheelEl.addEventListener('focusout', function () { hover = false; });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(wheelEl);
+    noise(); render(0);
+    if (M.calm || !canWaapi) { wheelEl.classList.add('static'); }
+    else schedule(HOLD);
+    return { noise: noise, jump: function (i) { idx = i; state.t = i; render(i); } };
+  })();
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { window.motion.init(); });
   else window.motion.init();
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+/* ---------- depth: a layered world drawn in code, rendered as a 2.5D camera move ---------- */
+  var Depth = (function () {
+    var W = 3072, H = 1152, GY = Math.round(H * 0.80);
+    var PAL = {
+      dark: { skyA: '#06131A', skyB: '#14394A', ring: 'rgba(94,208,192,0.30)', sweep: 'rgba(94,208,192,0.16)', star: '#CFE9EE',
+              far: '#0F2B36', mid: '#0B2029', tower: '#08171F', near: '#06121A', ground: '#030B10', win: ['#FFCD28', '#5ED0C0', '#9DA0FF'], edge: 'rgba(157,160,255,0.45)', node: '#9DA0FF', hex: 'rgba(94,208,192,0.55)', cable: '#1A4656', mast: '#3A6F82', fog: [0.03, 0.10, 0.13] },
+      light: { skyA: '#BFD6DE', skyB: '#F3F7F6', ring: 'rgba(47,50,194,0.22)', sweep: 'rgba(47,50,194,0.10)', star: '#6F8C98',
+              far: '#B4CBD3', mid: '#96B1BB', tower: '#7C9AA6', near: '#5E7F8C', ground: '#3F6170', win: ['#E8A317', '#2F32C2', '#1F8A70'], edge: 'rgba(47,50,194,0.40)', node: '#2F32C2', hex: 'rgba(47,50,194,0.26)', cable: '#6C8D99', mast: '#4C6F7D', fog: [0.93, 0.96, 0.96] }
+    };
+    function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+    /* paint(ctx, mode): mode 'c' draws colour, 'd' draws the depth map (white = near). Random draws never depend on mode. */
+    function paint(ctx, mode, pal) {
+      var D = mode === 'd';
+      function col(c, d) { if (!D) return c; var g = Math.round(d * 255); return 'rgb(' + g + ',' + g + ',' + g + ')'; }
+      ctx.save();
+      ctx.clearRect(0, 0, W, H);
+      var r;
+      /* L0 sky, radar, matrix grid, stars */
+      var g = ctx.createLinearGradient(0, 0, 0, H);
+      g.addColorStop(0, D ? '#0d0d0d' : pal.skyA); g.addColorStop(1, D ? '#0d0d0d' : pal.skyB);
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      r = rng(11);
+      ctx.lineWidth = 2;
+      var rx = W * 0.2, ry = H * 0.46;
+      for (var i = 1; i <= 6; i++) { ctx.beginPath(); ctx.arc(rx, ry, 90 * i, 0, 6.2832); ctx.strokeStyle = col(pal.ring, 0.06); ctx.stroke(); }
+      ctx.beginPath(); ctx.moveTo(rx, ry); ctx.arc(rx, ry, 540, -0.9, -0.2); ctx.closePath(); ctx.fillStyle = col(pal.sweep, 0.06); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(rx - 560, ry); ctx.lineTo(rx + 560, ry); ctx.moveTo(rx, ry - 560); ctx.lineTo(rx, ry + 560); ctx.strokeStyle = col(pal.ring, 0.06); ctx.stroke();
+      var gx0 = W * 0.60, gy0 = H * 0.09, cw = 46, chh = 34;
+      for (var cx = 0; cx < 18; cx++) for (var cy = 0; cy < 8; cy++) {
+        var v = r(), hot = v > 0.82;
+        ctx.fillStyle = col(hot ? pal.win[(cx + cy) % 3] : pal.ring, 0.09);
+        ctx.globalAlpha = D ? 1 : (hot ? 0.75 : 0.5);
+        ctx.fillRect(gx0 + cx * (cw + 5), gy0 + cy * (chh + 5), cw, chh);
+      }
+      ctx.globalAlpha = 1;
+      for (i = 0; i < 320; i++) { var sx = r() * W, sy = r() * H * 0.62, sr = 1 + r() * 2.2; ctx.fillStyle = col(pal.star, 0.10); ctx.globalAlpha = D ? 1 : 0.25 + r() * 0.5; ctx.fillRect(sx, sy, sr, sr); }
+      ctx.globalAlpha = 1;
+
+      /* L1 far skyline */
+      r = rng(21);
+      var x = -20;
+      while (x < W + 20) {
+        var bw = 46 + r() * 80, bh = 120 + r() * 250;
+        ctx.fillStyle = col(pal.far, 0.26); ctx.fillRect(x, GY - bh, bw, bh + 40);
+        for (var wy = GY - bh + 14; wy < GY - 20; wy += 18) for (var wx = x + 8; wx < x + bw - 10; wx += 14) {
+          var lit = r() > 0.74, wc = pal.win[Math.floor(r() * 3)];
+          if (lit && !D) { ctx.fillStyle = wc; ctx.globalAlpha = 0.55; ctx.fillRect(wx, wy, 6, 8); ctx.globalAlpha = 1; }
+        }
+        if (r() > 0.7) { ctx.fillStyle = col(pal.far, 0.26); ctx.fillRect(x + bw / 2 - 1.5, GY - bh - 50, 3, 52); }
+        x += bw + 4 + r() * 10;
+      }
+
+      /* L2 data towers, network graph */
+      r = rng(31);
+      x = 40;
+      while (x < W - 40) {
+        var tw = 62 + r() * 70, th = 300 + r() * 260;
+        ctx.fillStyle = col(pal.tower, 0.44); ctx.fillRect(x, GY + 10 - th, tw, th);
+        for (var sy2 = GY + 10 - th + 18; sy2 < GY - 16; sy2 += 16) {
+          var on = r() > 0.35, cc = pal.win[Math.floor(r() * 3)];
+          if (!D) { ctx.fillStyle = on ? cc : 'rgba(255,255,255,0.06)'; ctx.globalAlpha = on ? 0.8 : 1; ctx.fillRect(x + 10, sy2, tw - 20, 3); ctx.globalAlpha = 1; }
+        }
+        x += tw + 70 + r() * 220;
+      }
+      var nodes = [];
+      for (i = 0; i < 46; i++) nodes.push({ x: 120 + r() * (W - 240), y: H * 0.16 + r() * H * 0.34, r: 5 + r() * 7, c: Math.floor(r() * 3) });
+      ctx.lineWidth = 2;
+      for (i = 0; i < nodes.length; i++) {
+        var near = [];
+        for (var j = 0; j < nodes.length; j++) if (j !== i) { var dx = nodes[j].x - nodes[i].x, dy = nodes[j].y - nodes[i].y; near.push({ j: j, d: dx * dx + dy * dy }); }
+        near.sort(function (a, b) { return a.d - b.d; });
+        for (var k = 0; k < 2; k++) { ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[near[k].j].x, nodes[near[k].j].y); ctx.strokeStyle = col(pal.edge, 0.50); ctx.stroke(); }
+      }
+      var LAB = ['T1566', 'T1059', 'T1105', 'T1078', 'IOC', 'LOG', 'SIEM', 'T1486', 'ALERT', 'T1021'];
+      ctx.font = '600 15px "JetBrains Mono", ui-monospace, monospace'; ctx.textBaseline = 'middle';
+      for (i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.2832); ctx.fillStyle = col(pal.win[n.c], 0.50); ctx.fill();
+        if (i % 3 === 0) {
+          var lb = LAB[(i / 3 | 0) % LAB.length], tw2 = ctx.measureText(lb).width + 16;
+          ctx.fillStyle = col(pal.tower, 0.50); ctx.globalAlpha = D ? 1 : 0.85; ctx.fillRect(n.x + 12, n.y - 12, tw2, 24); ctx.globalAlpha = 1;
+          ctx.fillStyle = col(pal.win[n.c], 0.50); ctx.fillText(lb, n.x + 20, n.y + 1);
+        }
+      }
+
+      /* L3 hex columns, poles and cables */
+      r = rng(41);
+      ctx.font = '500 17px "JetBrains Mono", ui-monospace, monospace'; ctx.textBaseline = 'alphabetic';
+      for (i = 0; i < 16; i++) {
+        var hx = 60 + i * (W - 120) / 15 + (r() - 0.5) * 60, hy0 = 40 + r() * 260, lines = 10 + Math.floor(r() * 14);
+        for (j = 0; j < lines; j++) {
+          var s = ''; for (k = 0; k < 6; k++) s += (r() * 256 | 0).toString(16).toUpperCase().padStart(2, '0');
+          ctx.fillStyle = col(pal.hex, 0.70); ctx.globalAlpha = D ? 1 : 0.35 + 0.65 * (1 - j / lines);
+          ctx.fillText(s, hx, hy0 + j * 21);
+        }
+      }
+      ctx.globalAlpha = 1;
+      var poles = [];
+      for (x = 120; x < W; x += 340 + r() * 160) poles.push(x);
+      ctx.lineCap = 'round';
+      for (i = 0; i < poles.length; i++) {
+        ctx.fillStyle = col(pal.mast, 0.70); ctx.fillRect(poles[i] - 5, GY - 330, 10, 360);
+        ctx.fillRect(poles[i] - 46, GY - 322, 92, 7);
+        if (i + 1 < poles.length) for (k = 0; k < 3; k++) {
+          ctx.beginPath(); ctx.moveTo(poles[i] + (k - 1) * 40, GY - 318);
+          ctx.quadraticCurveTo((poles[i] + poles[i + 1]) / 2, GY - 318 + 120 + k * 16, poles[i + 1] + (k - 1) * 40, GY - 318);
+          ctx.strokeStyle = col(pal.cable, 0.70); ctx.lineWidth = 3; ctx.stroke();
+        }
+      }
+
+      /* L4 foreground terrain and masts */
+      r = rng(51);
+      ctx.beginPath(); ctx.moveTo(0, H);
+      for (x = 0; x <= W; x += 16) { var yy = GY + 70 + Math.sin(x * 0.004) * 30 + Math.sin(x * 0.013 + 1) * 14 + r() * 3; ctx.lineTo(x, yy); }
+      ctx.lineTo(W, H); ctx.closePath(); ctx.fillStyle = col(pal.ground, 0.92); ctx.fill();
+      for (i = 0; i < 9; i++) {
+        var mx = 160 + i * 340 + r() * 120, mh = 160 + r() * 200, base = GY + 80;
+        ctx.strokeStyle = col(pal.near, 0.94); ctx.lineWidth = 4;
+        ctx.beginPath(); ctx.moveTo(mx, base); ctx.lineTo(mx, base - mh); ctx.stroke();
+        ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(mx - 24, base - mh * 0.6); ctx.lineTo(mx + 24, base - mh * 0.6); ctx.moveTo(mx - 14, base - mh * 0.8); ctx.lineTo(mx + 14, base - mh * 0.8); ctx.stroke();
+        ctx.beginPath(); ctx.arc(mx, base - mh - 4, 5, 0, 6.2832); ctx.fillStyle = col(i % 2 ? '#FF6B57' : pal.win[0], 0.94); ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    var VS = 'attribute vec2 p; varying vec2 v; void main(){ v = p * .5 + .5; gl_Position = vec4(p, 0., 1.); }';
+    var FS = 'precision mediump float; varying vec2 v; uniform sampler2D uC, uD; uniform vec2 uRes, uPar; uniform vec3 uCam; uniform float uWA; uniform vec3 uFog; uniform float uMix;' +
+      'void main(){ float asp = uRes.x / uRes.y; float vh = uCam.z; float vw = vh * asp / uWA; vec2 s = vec2(v.x, 1. - v.y);' +
+      ' vec2 base = vec2(uCam.x + (s.x - .5) * vw, uCam.y + (s.y - .5) * vh); vec2 sc = vec2(vw, vh); vec2 o = vec2(0.);' +
+      ' for (int i = 0; i < 3; i++) { float d = texture2D(uD, clamp(base + o, 0., 1.)).r; o = uPar * (d - .45) * sc; }' +
+      ' vec2 uv = clamp(base + o, 0., 1.); float d2 = texture2D(uD, uv).r; vec3 c = texture2D(uC, uv).rgb;' +
+      ' c = mix(c, uFog, (1. - d2) * .22 * uMix); float vg = smoothstep(1.15, .35, length((s - .5) * vec2(asp * .62, 1.))); c *= mix(1., vg, .55);' +
+      ' gl_FragColor = vec4(c, 1.); }';
+
+    function create(canvas, o) {
+      o = o || {};
+      var way = o.waypoints || [{ x: 0.3, y: 0.5, h: 0.7 }];
+      var theme = o.theme || 'dark';
+      var colorC = document.createElement('canvas'), depthC = document.createElement('canvas');
+      colorC.width = depthC.width = W; colorC.height = depthC.height = H;
+      var gl = null, prog, tC, tD, loc = {}, ctx2 = null;
+      var cam = { x: way[0].x, y: way[0].y, h: way[0].h }, from = null, to = null, t0 = 0, dur = 1;
+      var vel = { x: 0, y: 0 }, ptr = { x: 0, y: 0, tx: 0, ty: 0 }, running = false, raf = 0, ready = false, lastT = 0, mixAmt = 1;
+      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      var reduce = !!o.still, calmOn = false, lastDraw = 0;
+
+      function size() {
+        var w = Math.max(2, Math.round(canvas.clientWidth * dpr)), h = Math.max(2, Math.round(canvas.clientHeight * dpr));
+        if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; if (gl) gl.viewport(0, 0, w, h); }
+      }
+      function mk(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; }
+      function tex(src) {
+        var t = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, t);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, src); return t;
+      }
+      function initGL() {
+        try { gl = canvas.getContext('webgl', { antialias: false, alpha: false, powerPreference: 'low-power' }) || null; } catch (e) { gl = null; }
+        if (!gl) { ctx2 = canvas.getContext('2d'); return; }
+        try {
+          prog = gl.createProgram(); gl.attachShader(prog, mk(gl.VERTEX_SHADER, VS)); gl.attachShader(prog, mk(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(prog);
+          if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error('link');
+          gl.useProgram(prog);
+          var b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var a = gl.getAttribLocation(prog, 'p'); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
+          ['uC', 'uD', 'uRes', 'uPar', 'uCam', 'uWA', 'uFog', 'uMix'].forEach(function (n) { loc[n] = gl.getUniformLocation(prog, n); });
+          gl.uniform1i(loc.uC, 0); gl.uniform1i(loc.uD, 1); gl.uniform1f(loc.uWA, W / H);
+        } catch (e) { gl = null; ctx2 = canvas.getContext('2d'); }
+      }
+      function upload(colour, depth) {
+        if (!gl) return;
+        gl.activeTexture(gl.TEXTURE0); if (colour) { if (tC) gl.deleteTexture(tC); tC = tex(colorC); }
+        gl.activeTexture(gl.TEXTURE1); if (depth) { if (tD) gl.deleteTexture(tD); tD = tex(depthC); }
+      }
+      function ease(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+
+      function draw(now) {
+        size();
+        var dt = Math.min(0.05, (now - lastT) / 1000 || 0.016); lastT = now;
+        var px = 0, py = 0;
+        if (to) {
+          var u = Math.min(1, (now - t0) / dur), e = ease(u), pe = ease(Math.max(0, u - 0.02));
+          var nx = from.x + (to.x - from.x) * e, ny = from.y + (to.y - from.y) * e, nh = from.h + (to.h - from.h) * e;
+          vel.x = (nx - cam.x) / Math.max(dt, 0.001); vel.y = (ny - cam.y) / Math.max(dt, 0.001);
+          cam.x = nx; cam.y = ny; cam.h = nh;
+          if (u >= 1) { to = null; }
+        } else { vel.x *= 0.9; vel.y *= 0.9; }
+        ptr.x += (ptr.tx - ptr.x) * 0.06; ptr.y += (ptr.ty - ptr.y) * 0.06;
+        var tt = now / 1000, orb = calmOn ? 0 : 1;
+        px = -ptr.x * 0.030 + Math.sin(tt * 0.23) * 0.010 * orb - vel.x * 0.9;
+        py = -ptr.y * 0.022 + Math.cos(tt * 0.17) * 0.007 * orb - vel.y * 1.6;
+        if (reduce) { px = 0; py = 0; }
+        if (gl) {
+          gl.uniform2f(loc.uRes, canvas.width, canvas.height); gl.uniform2f(loc.uPar, px, py); gl.uniform3f(loc.uCam, cam.x, cam.y, cam.h);
+          var f = PAL[theme].fog; gl.uniform3f(loc.uFog, f[0], f[1], f[2]); gl.uniform1f(loc.uMix, mixAmt);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        } else if (ctx2) {
+          var asp = canvas.width / canvas.height, vh = cam.h * H, vw = vh * asp;
+          ctx2.drawImage(colorC, cam.x * W - vw / 2, cam.y * H - vh / 2, vw, vh, 0, 0, canvas.width, canvas.height);
+        }
+      }
+      function loop(now) {
+        if (!running) return; raf = requestAnimationFrame(loop);
+        if (now - lastDraw < 20) return;
+        if (calmOn && !to && Math.abs(ptr.tx - ptr.x) < 0.002 && Math.abs(ptr.ty - ptr.y) < 0.002 && Math.abs(vel.x) < 1e-4 && Math.abs(vel.y) < 1e-4 && now - lastDraw < 1000) return;
+        lastDraw = now; draw(now);
+      }
+
+      var api = {
+        get ready() { return ready; },
+        init: function (cb) {
+          initGL();
+          paint(colorC.getContext('2d'), 'c', PAL[theme]); paint(depthC.getContext('2d'), 'd', PAL[theme]);
+          upload(true, true); ready = true; size(); draw(performance.now()); if (cb) cb();
+        },
+        setTheme: function (t) { if (t === theme) return; theme = t; paint(colorC.getContext('2d'), 'c', PAL[theme]); upload(true, false); if (!running) draw(performance.now()); },
+        goto: function (i, ms, instant) {
+          var w = way[i]; if (!w) return;
+          if (instant || reduce) { cam.x = w.x; cam.y = w.y; cam.h = w.h; to = null; if (!running) draw(performance.now()); return; }
+          from = { x: cam.x, y: cam.y, h: cam.h }; to = w; t0 = performance.now(); dur = ms || 1500;
+        },
+        point: function (x, y) { ptr.tx = x; ptr.ty = y; },
+        start: function () { if (running || !ready) return; running = true; lastT = performance.now(); raf = requestAnimationFrame(loop); },
+        stop: function () { running = false; cancelAnimationFrame(raf); },
+        resize: function () { size(); if (!running && ready) draw(performance.now()); },
+        calm: function (v) { calmOn = !!v; },
+        isGL: function () { return !!gl; },
+        _cam: cam
+      };
+      return api;
+    }
+    return { create: create, W: W, H: H };
+  })();
+
+/* ---------- reel: the whole site as full-screen scenes on a looping camera move ---------- */
+  window.reel = (function () {
+    var root = document.documentElement, M = window.motion;
+    var main = document.querySelector('main'), canvas = document.getElementById('depth'), dock = document.getElementById('dock');
+    if (!main || !canvas || !dock || !Element.prototype.animate) return { labels: function () {}, active: false };
+    var scenes = ['.hero', '#about', '#projects', '#corner', '#skills', '#education', '#certs', '#contact'].map(function (s) { return main.querySelector(s); }).filter(Boolean);
+    var IDS = ['', 'about', 'projects', 'corner', 'skills', 'education', 'certs', 'contact'];
+    var N = scenes.length, idx = 0, active = false, depth = null, elapsed = 0, dwell = 7, lastT = 0, raf = 0, hold = false, wheelLock = 0, calm = M.calm;
+    var WAY = [{ x: .22, y: .50, h: .72 }, { x: .30, y: .46, h: .66 }, { x: .38, y: .52, h: .66 }, { x: .46, y: .46, h: .62 }, { x: .54, y: .50, h: .66 }, { x: .62, y: .46, h: .66 }, { x: .70, y: .52, h: .64 }, { x: .78, y: .48, h: .70 }];
+    var TXT = {
+      prev: ['Previous scene', 'Cảnh trước'], next: ['Next scene', 'Cảnh sau'], pause: ['Pause the showreel', 'Tạm dừng showreel'], intro: ['Intro', 'Mở đầu'],
+      scene: ['Scene', 'Cảnh'], dock: ['Showreel controls', 'Điều khiển showreel'], scroll: ['Scroll', 'Cuộn trang'], skip: ['Switch to normal scrolling', 'Chuyển sang cuộn trang thường'], reel: ['Reel', 'Reel']
+    };
+    function L(k) { return TXT[k][root.lang === 'vi' ? 1 : 0]; }
+    var navFor = { about: '#about', projects: '#projects', corner: '#corner', skills: '#skills', education: '#education', certs: '#certs', contact: '#contact' };
+    function sceneName(i) { if (i === 0) return L('intro'); var a = document.querySelector('.top nav a[href="' + navFor[IDS[i]] + '"]'); return a ? a.textContent.trim() : IDS[i]; }
+
+    /* dock */
+    var dots = document.getElementById('dots'), cnt = document.getElementById('rCnt'), dwellBar = document.getElementById('dwell');
+    scenes.forEach(function (s, i) {
+      var li = document.createElement('li'), b = document.createElement('button');
+      b.type = 'button'; b.className = 'dot'; b.addEventListener('click', function () { go(i, true); });
+      li.appendChild(b); dots.appendChild(li);
+    });
+    function labels() {
+      dock.setAttribute('aria-label', L('dock'));
+      document.getElementById('rPrev').setAttribute('aria-label', L('prev'));
+      document.getElementById('rNext').setAttribute('aria-label', L('next'));
+      Array.prototype.forEach.call(dots.querySelectorAll('.dot'), function (b, i) { var n = sceneName(i); b.setAttribute('aria-label', L('scene') + ' ' + (i + 1) + ': ' + n); b.setAttribute('data-label', n); });
+      var sk = document.getElementById('skipReel'); if (sk) sk.textContent = L('skip');
+    }
+    function markDots() {
+      Array.prototype.forEach.call(dots.querySelectorAll('.dot'), function (b, i) { if (i === idx) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
+      cnt.textContent = (idx + 1) + ' / ' + N;
+    }
+
+    /* scene entrance */
+    var ENTER = '.head, .blk, .facts, .cw, .skills > div, .certs li, .mail, .links, .stage';
+    var HEROSEL = '.hero h1 span, .hero .wheel, .hero .lines p, .hero .status, .hero .cta .btn, .hero .sheet';
+    function enterAnim(s, first) {
+      if (calm) return;
+      s.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 380, easing: 'ease-out' });
+      if (first && s === scenes[0]) return;
+      var els = Array.prototype.slice.call(s.querySelectorAll(s === scenes[0] ? HEROSEL : ENTER));
+      els.forEach(function (e, i) { e.animate([{ opacity: 0, transform: 'translateY(26px)' }, { opacity: 1, transform: 'none' }], { duration: 650, delay: 120 + 70 * i, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' }); });
+    }
+    function measure() {
+      var s = scenes[idx], sd = Math.max(0, s.scrollHeight - s.clientHeight);
+      dwell = Math.max(7, 1.4 + sd / 55 + 1.8);
+    }
+
+    function go(i, manual, instant) {
+      i = ((i % N) + N) % N;
+      var prev = scenes[idx], next = scenes[i], same = prev === next && next.classList.contains('on');
+      if (same) return;
+      var dist = Math.abs(i - idx);
+      scenes.forEach(function (s) { if (s !== prev && s !== next) s.classList.remove('on'); });
+      if (prev !== next && prev.classList.contains('on')) {
+        if (calm || instant) prev.classList.remove('on');
+        else { prev.style.pointerEvents = 'none'; var a = prev.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 240, fill: 'forwards' }); a.onfinish = a.oncancel = function () { prev.classList.remove('on'); prev.style.pointerEvents = ''; a.cancel(); }; }
+      }
+      idx = i; next.classList.add('on'); next.scrollTop = 0; elapsed = 0;
+      measure(); markDots();
+      if (!instant) enterAnim(next, false);
+      if (depth) depth.goto(i, instant ? 0 : 1300 + dist * 150, instant);
+      if (window.wheel && i === 0 && window.wheel.jump) { /* keep the wheel where it is */ }
+      try { history.replaceState(null, '', i ? '#' + IDS[i] : location.pathname + location.search); } catch (e) {}
+      if (manual) window.announce(L('scene') + ' ' + (i + 1) + ' / ' + N + ': ' + sceneName(i), L('scene') + ' ' + (i + 1) + ' / ' + N + ': ' + sceneName(i));
+    }
+
+    /* clock: advances scenes while playing */
+    function playing() { return active && !M.paused && !document.hidden && !hold && !calm; }
+    function tick(now) {
+      raf = requestAnimationFrame(tick);
+      var dt = Math.min(0.1, (now - lastT) / 1000 || 0); lastT = now;
+      if (!playing()) return;
+      elapsed += dt;
+      var s = scenes[idx], sd = s.scrollHeight - s.clientHeight;
+      if (sd > 4 && elapsed > 1.4) s.scrollTop = Math.min(sd, (elapsed - 1.4) * 55);
+      dwellBar.style.transform = 'scaleX(' + Math.min(1, elapsed / dwell).toFixed(4) + ')';
+      if (elapsed >= dwell) go(idx + 1, false);
+    }
+
+    /* enter / leave the reel */
+    function layout() { root.style.setProperty('--hdr', (document.querySelector('.top').offsetHeight || 58) + 'px'); }
+    function ensureDepth() {
+      if (depth) return;
+      depth = Depth.create(canvas, { waypoints: WAY, theme: root.getAttribute('data-theme') === 'light' ? 'light' : 'dark', still: calm });
+      depth.init();
+      depth.goto(idx, 0, true);
+      canvas.classList.add('ready');
+    }
+    function enter(startIdx) {
+      if (active) return;
+      active = true; root.classList.add('reel'); layout();
+      var rb = document.getElementById('reelBtn'); if (rb) rb.setAttribute('aria-pressed', 'true');
+      dock.hidden = false; markDots(); labels();
+      scenes.forEach(function (s) { s.classList.remove('on'); });
+      var from = startIdx == null ? 0 : startIdx;
+      idx = from; scenes[idx].classList.add('on'); scenes[idx].scrollTop = 0; measure(); markDots();
+      ensureDepth(); depth.goto(idx, 0, true); canvas.hidden = false; depth.resize(); if (!calm) depth.start();
+      elapsed = 0; lastT = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(tick);
+      try { localStorage.setItem('reel', 'on'); } catch (e) {}
+      window.__reelReady = true;
+    }
+    function leave() {
+      if (!active) return;
+      var cur = scenes[idx];
+      active = false; root.classList.remove('reel'); root.style.removeProperty('--hdr');
+      var rb = document.getElementById('reelBtn'); if (rb) rb.setAttribute('aria-pressed', 'false');
+      dock.hidden = true; canvas.hidden = true; if (depth) depth.stop();
+      scenes.forEach(function (s) { s.classList.remove('on'); s.style.pointerEvents = ''; s.getAnimations().forEach(function (a) { a.cancel(); }); });
+      cancelAnimationFrame(raf);
+      try { localStorage.setItem('reel', 'off'); } catch (e) {}
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+      var target = idx ? cur : null, y = 0;
+      if (target) y = Math.max(0, target.getBoundingClientRect().top + window.pageYOffset - 70);
+      window.scrollTo({ top: y, left: 0, behavior: 'instant' });
+    }
+
+    /* wiring */
+    document.getElementById('rPrev').addEventListener('click', function () { go(idx - 1, true); });
+    document.getElementById('rNext').addEventListener('click', function () { go(idx + 1, true); });
+    document.getElementById('rExit').addEventListener('click', leave);
+    var rb = document.getElementById('reelBtn');
+    if (rb) rb.addEventListener('click', function () { if (active) leave(); else enter(nearest()); window.announce(active ? 'Showreel on' : 'Showreel off', active ? 'Đã bật showreel' : 'Đã tắt showreel'); });
+    var sk = document.getElementById('skipReel'); if (sk) sk.addEventListener('click', function (e) { e.preventDefault(); leave(); main.focus(); });
+    function nearest() {
+      var best = 0;
+      scenes.forEach(function (s, i) { if (s.getBoundingClientRect().top <= 150) best = i; });
+      return best;
+    }
+    function sceneIndexOf(el) { for (var i = 0; i < N; i++) if (scenes[i] === el || scenes[i].contains(el)) return i; return -1; }
+    document.addEventListener('click', function (e) {
+      if (!active || e.defaultPrevented) return;
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var id = a.getAttribute('href').slice(1);
+      var el = id && id !== 'top' ? document.getElementById(id) : null;
+      var i = el ? sceneIndexOf(el) : 0;
+      if (i < 0) return;
+      e.preventDefault(); go(i, true);
+    });
+    window.addEventListener('hashchange', function () {
+      if (!active) return; var el = document.getElementById(location.hash.slice(1)); var i = el ? sceneIndexOf(el) : 0; if (i >= 0) go(i, true);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!active || e.altKey || e.ctrlKey || e.metaKey) return;
+      var t = e.target, tag = t && t.tagName;
+      if (tag === 'TEXTAREA' || tag === 'INPUT' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      if (e.key === 'Escape') { if (document.getElementById('catMenu') && !document.getElementById('catMenu').hidden) return; leave(); }
+      else if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); go(idx + 1, true); }
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(idx - 1, true); }
+    });
+    main.addEventListener('wheel', function (e) {
+      if (!active) return;
+      var s = scenes[idx], down = e.deltaY > 0, max = s.scrollHeight - s.clientHeight;
+      var canScroll = max > 4 && ((down && s.scrollTop < max - 2) || (!down && s.scrollTop > 2));
+      if (canScroll) { if (!M.paused) M.setPaused(true); return; }
+      if (Math.abs(e.deltaY) < 8) return;
+      var now = performance.now(); if (now - wheelLock < 900) { e.preventDefault(); return; }
+      wheelLock = now; e.preventDefault(); go(idx + (down ? 1 : -1), true);
+    }, { passive: false });
+    document.addEventListener('focusin', function (e) {
+      if (!active) return;
+      var t = e.target; if (!t || !t.matches) return;
+      var typing = t.matches('textarea, input, select');
+      var kb = false; try { kb = t.matches(':focus-visible'); } catch (er) {}
+      if ((typing || kb) && !M.paused && (main.contains(t) || dock.contains(t))) M.setPaused(true);
+    });
+    document.addEventListener('visibilitychange', function () { if (depth) { if (document.hidden) depth.stop(); else if (active && !calm) depth.start(); } });
+    window.addEventListener('pointermove', function (e) { if (active && depth) depth.point(e.clientX / window.innerWidth * 2 - 1, e.clientY / window.innerHeight * 2 - 1); }, { passive: true });
+    window.addEventListener('resize', function () { if (!active) return; layout(); if (depth) depth.resize(); measure(); });
+    document.addEventListener('motionpause', function (e) { if (depth) depth.calm(e.detail); });
+    new MutationObserver(function () { if (depth) depth.setTheme(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark'); }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    if (calm) M.setPaused(true);
+
+    labels();
+    var wantsReel = root.classList.contains('reel');
+    root.classList.remove('reel');
+    if (wantsReel) {
+      var h = location.hash.slice(1), el = h ? document.getElementById(h) : null, i0 = el ? Math.max(0, sceneIndexOf(el)) : 0;
+      enter(i0);
+    }
+    return { labels: labels, enter: enter, leave: leave, go: go, get active() { return active; } };
+  })();
 })();
 </script>
 
@@ -1361,8 +1956,10 @@
     lang = l;
     document.documentElement.lang = l;
     i18n.forEach(function (el) { el.textContent = l === 'vi' ? el.dataset.vi : el.dataset.en; });
-    document.title = 'Lê Lý Trung Hiếu | Security Data Analyst';
+    document.title = 'Lê Lý Trung Hiếu | Security Data Analyst Intern';
     render(src.value);
+    if (window.wheel) window.wheel.noise();
+    if (window.reel) window.reel.labels();
     refreshCap();
     try { localStorage.setItem('lang', l); } catch (e) {}
   }
@@ -1445,7 +2042,7 @@
 
     function vw() { return document.documentElement.clientWidth || window.innerWidth; }
     function vh() { return window.innerHeight || 700; }
-    function floorY() { return vh() - 6; }
+    function floorY() { return vh() - 6 - (root.classList.contains('reel') ? 70 : 0); }
     function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
     function rnd(a, b) { return a + Math.random() * (b - a); }
     function sgn(v) { return v < 0 ? -1 : 1; }
